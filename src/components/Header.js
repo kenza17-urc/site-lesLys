@@ -14,16 +14,18 @@ import Cart from '../components/Cart';
 import { CartContext } from '../context/CartContext';
 
 const Header = () => {
+
   const { isOpen, setIsOpen, itemsAmount } = useContext(CartContext);
   const [catNavMobile, setCatnavMobile] = useState(false);
+  
   return (
-    <header className='bg-primary py-6 fixed w-full top-0 z-40 lg:relative xl:mb-[30px]'>
+    <header className='bg-primary py-6 fixed w-full top-0 z-40 lg:relative xl:mb-[20px] rounded-xl'>
       <div className='container mx-auto'>
         <div className='flex flex-row gap-4 lg:items-center justify-between mb-4 xl:mb-0'>
           {/* menu */}
           <div
             onClick={() => setCatnavMobile(true)}
-            className='text-3xl xl:hidden cursor-pointer'
+            className='text-3xl xl:hidden cursor-pointer '
           >
             <FiMenu />
           </div>
@@ -35,6 +37,7 @@ const Header = () => {
           >
             <CategoryNavMobile setCatnavMobile={setCatnavMobile} />
           </div>
+
           {/* logo */}
           <Link to={'/'}>
             <img src={Logo} alt=''style={{ maxWidth: '50px', height: 'auto' }}  />
@@ -47,7 +50,7 @@ const Header = () => {
           <div className='flex items-center gap-x-[10px]'>
             {/* phone */}
             <div className='hidden xl:flex uppercase'>
-            Besoin d’aide? 01841481284
+            Besoin d’aide ? 01841481284
             </div>
             {/* cart icon */}
             <div
@@ -56,7 +59,7 @@ const Header = () => {
             >
               <SlBag className='text-2xl' />
               {/* amount */}
-              <div className='bg-accent text-primary absolute w-[18px] h-[18px] rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold tracking-[-0.1em]'>
+              <div className='bg-accent text-primary absolute w-[16px] h-[16px] rounded-full top-4 -right-1 text-[13px] flex justify-center items-center font-bold tracking-[-0.1em]'>
                 {itemsAmount}
               </div>
             </div>

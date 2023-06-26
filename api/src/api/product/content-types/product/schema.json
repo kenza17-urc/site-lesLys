@@ -41,6 +41,9 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "products"
+    },
+    "strip_product_id": {
+      "type": "string"
     }
   }
 }

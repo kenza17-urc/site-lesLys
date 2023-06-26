@@ -5,16 +5,18 @@ import { IoArrowForward, IoCartOutline, IoClose } from 'react-icons/io5';
 import { CartContext } from '../context/CartContext';
 // components
 import CartItem from '../components/CartItem';
-// stripe
 import { loadStripe } from '@stripe/stripe-js';
 import { request } from '../request';
 
-const Cart = () => {
-  const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
+  const key = process.env.REACT_APP_API_STRIP;
 
-  const stripePromise = loadStripe(
-    'pk_test_51Ljir7IKsjbCfwtZWT0APA0aQPj9TZd3VmpO52EQr4cQCn3Ja2sl4iMgOTneVUK4PCQvZGE3In1AizvWqYLDbzzn00N9bCIXWj'
-  );
+console.log(' KEY STRIP ', key)
+
+const stripePromise = loadStripe(key);
+
+const Cart = () => {
+
+  const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
 
   const handlePayment = async () => {
     try {
@@ -23,9 +25,21 @@ const Cart = () => {
         cart,
       });
 
+      console.log(' redirect to CheckOut ')
+      /*await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });*/
+
+      console.log(' Strip session ID ',  res.data.stripeSession.id)
+      
       await stripe.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
+      }).then(function (result) {
+        if (result.error) {
+          // Handle error here
+        }
       });
+      
     } 
     catch (error) {
       console.log(error);
