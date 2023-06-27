@@ -8,9 +8,6 @@ import CartItem from '../components/CartItem';
 import { loadStripe } from '@stripe/stripe-js';
 import { request } from '../request';
 
-// const key = process.env.REACT_APP_API_STRIP;
-// console.log(' KEY STRIP ', key)
-
 const stripePromise = loadStripe('pk_live_51Ljir7IKsjbCfwtZocb2FvoWZKg4do8FSN3nQmR4bxnuaEt02bvKHk05pOaYytOEcIacMuJFHaxfLz1WpWqrw0nQ00OeSbl7vS');
 
 const Cart = () => {
@@ -24,13 +21,8 @@ const Cart = () => {
         cart,
       });
 
-      console.log(' redirect to CheckOut ')
-      /*await stripe.redirectToCheckout({
-        sessionId: res.data.stripeSession.id,
-      });*/
-
-      // console.log(' Strip session ID ',  res.data.stripeSession.id)
-      
+      console.log(' RE DIRECT TO CHECK OUT ')
+     
       await stripe.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
       }).then(function (result) {
@@ -97,7 +89,7 @@ const Cart = () => {
           </div>
         ) : (
           <div className='h-full absolute top-0 right-0 left-0 flex justify-center items-center -z-10 flex-col text-white/30'>
-            <div className='text-2xl'>Votre panier est vide</div>
+            <div className='text-2xl'> Votre panier est vide </div>
             <div className='text-6xl'>
               <IoCartOutline />
             </div>

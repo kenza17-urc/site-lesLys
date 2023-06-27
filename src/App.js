@@ -23,8 +23,8 @@ import useProductHandler from './useProductHandler';
 
 const Layout = () => {
   return (
-    <div>
-      <Header />
+    <div className=' ml-12'>
+      <Header className=""/>
       <Outlet /> 
       <Footer />
     </div>

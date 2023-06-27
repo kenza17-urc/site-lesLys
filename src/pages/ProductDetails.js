@@ -13,6 +13,11 @@ const ProductDetails = () => {
   const { id } = useParams();
   // get product data base on the id
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
+
+const hostApi = process.env.REACT_APP_API_HOST
+
+console.log(' HOST API ', hostApi);
+
   if (!data) {
     return <div className='container mx-auto'>loading...</div>;
   }
@@ -26,7 +31,8 @@ const ProductDetails = () => {
         <div className='flex flex-col lg:flex-row gap-[30px] mb-[30px]'>
           <div className='flex-1 lg:max-w-[40%] lg:h-[540px] grad rounded-lg flex justify-center items-center'>
             <img
-              src={`http://localhost:1337${data[0]?.attributes.image.data?.attributes.url}`}
+               src={`${hostApi}${data[0]?.attributes.image.data?.attributes.url}`.replace('api/','')}
+             // src={`${hostApi}${data?.attributes.image.data?.attributes.url}`}
               alt=''
               className='w-full max-w-[65%]'
             />

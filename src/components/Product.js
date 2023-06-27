@@ -23,7 +23,7 @@ const Product = ({ product }) => {
             className='w-[160px] h-[160px] group-hover:scale-90 transition-all'
             // Rendre l'url Dynamique Pour le déploiement 
             // http://localhost:1337
-            src={`${hostApi}${product?.attributes.image.data?.attributes.url}`}
+            src={`${hostApi}${product?.attributes.image.data?.attributes.url}`.replace('api/',"")}
             alt=''
           />
         </div>
