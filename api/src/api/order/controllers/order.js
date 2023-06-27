@@ -1,6 +1,6 @@
 'use strict';
 
-const stripe = require("stripe")(process.env.STRIPE_KEY_SECRET);
+const stripe = require("stripe")("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");
 
 /**
  * order controller
@@ -26,10 +26,8 @@ module.exports = createCoreController('api::order.order', ({strapi})=>({
             .service("api::product.product")
             .findOne(product.id);
             return {
-              
               price : item.strip_product_id,
               quantity: product.amount // Quantity of the product
-            
             };
             
           })

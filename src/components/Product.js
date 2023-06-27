@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const hostApi = process.env.REACT_APP_API_HOST
+// console.log( ' HOST API -> ', hostApi)
 
 const Product = ({ product }) => {
   

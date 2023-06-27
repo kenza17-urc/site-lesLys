@@ -8,11 +8,10 @@ import CartItem from '../components/CartItem';
 import { loadStripe } from '@stripe/stripe-js';
 import { request } from '../request';
 
-  const key = process.env.REACT_APP_API_STRIP;
+// const key = process.env.REACT_APP_API_STRIP;
+// console.log(' KEY STRIP ', key)
 
-console.log(' KEY STRIP ', key)
-
-const stripePromise = loadStripe(key);
+const stripePromise = loadStripe('pk_live_51Ljir7IKsjbCfwtZocb2FvoWZKg4do8FSN3nQmR4bxnuaEt02bvKHk05pOaYytOEcIacMuJFHaxfLz1WpWqrw0nQ00OeSbl7vS');
 
 const Cart = () => {
 
@@ -30,7 +29,7 @@ const Cart = () => {
         sessionId: res.data.stripeSession.id,
       });*/
 
-      console.log(' Strip session ID ',  res.data.stripeSession.id)
+      // console.log(' Strip session ID ',  res.data.stripeSession.id)
       
       await stripe.redirectToCheckout({
         sessionId: res.data.stripeSession.id,

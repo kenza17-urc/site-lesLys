@@ -7,12 +7,12 @@ WORKDIR /app
 # Copy package.json and yarn.lock to the working directory
 COPY package.json yarn.lock ./
 
+# --production --frozen-lockfile
 # Install dependencies
-RUN yarn install --production --frozen-lockfile
+RUN yarn install 
 
 # Copy the rest of the application code
 COPY . .
-
 # Build the Strapi admin panel (optional)
 RUN yarn build
 
