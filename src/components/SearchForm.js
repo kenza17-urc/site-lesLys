@@ -40,11 +40,11 @@ const SearchForm = () => {
       onSubmit={handleSubmit}
       className={`${
         isAnimating ? 'animate-shake' : 'animate-none'
-      }  relative sm:w-3/2 lg:w-full ml-8`}
+      }  relative sm:w-1/2 lg:w-full m-0`}
     >
       <input
         onChange={handleSearchInput}
-        className='input m-0 '
+        className='input text-sm m-0'
         type='text'
         placeholder='Search for a product...'
       />

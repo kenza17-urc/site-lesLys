@@ -23,7 +23,7 @@ import useProductHandler from './useProductHandler';
 
 const Layout = () => {
   return (
-    <div className=' ml-12'>
+    <div className='absolute inset-0 '>
       <Header className=""/>
       <Outlet /> 
       <Footer />

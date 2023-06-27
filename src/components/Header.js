@@ -25,8 +25,9 @@ const Header = () => {
   const { isOpen, setIsOpen, itemsAmount } = useContext(CartContext);
   const [catNavMobile, setCatnavMobile] = useState(false);
   // ml-50 sm:w-3/5 md:w-32 sm:20
+  // 
   return (  
-    <header className='bg-primary py-6 fixed  lg:w-full top-0 z-40 lg:relative xl:mb-[20px] rounded-xl  mx-12'>
+    <header className='bg-primary py-6 fixed  w-full top-0 z-40 lg:relative xl:mb-[20px] rounded-xl'>
       <div className='container mx-auto'>
         <div className='flex flex-row gap-4 lg:items-center justify-between mb-4 xl:mb-0'>
           {/* menu */}
