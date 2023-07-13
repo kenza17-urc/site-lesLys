@@ -29,7 +29,7 @@ const Hero = () => {
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
                 <div className='text-[20px] uppercase font-medium leading-tight mb-4'>
-                  economiser 25%
+
                 </div>
                 <button className='btn btn-accent mx-auto lg:mx-0'>
                     Achete maintenant
@@ -44,7 +44,7 @@ const Hero = () => {
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
                 <div className='text-[20px] uppercase font-medium leading-tight mb-4'>
-                  economiser 25%
+                  
                 </div>
                 <button className='btn btn-accent mx-auto lg:mx-0'>
                     Achete maintenant
