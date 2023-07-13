@@ -3,8 +3,8 @@ import React from 'react';
 import CategoryNav from '../components/CategoryNav';
 import MainSlider from '../components/MainSlider';
 // images
-import PromoImg1 from '../img/2.jpg';
-import PromoImg2 from '../img/4.jpg';
+import PromoImg1 from '../img/fon.png';
+import PromoImg2 from '../img/6.jpg';
 
 const Hero = () => {
   return (
@@ -24,7 +24,7 @@ const Hero = () => {
             {/* promo 1 */}
             <div
               className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'
-              style={{ backgroundImage: `url(${PromoImg1})`, color: '#000000' }} // apply background image and text color styles
+              style={{ backgroundImage: `url(${PromoImg1})`, color: '#000000',backgroundSize: 'cover' }} // apply background image and text color styles
             >
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
@@ -32,14 +32,14 @@ const Hero = () => {
 
                 </div>
                 <button className='btn btn-accent mx-auto lg:mx-0'>
-                    Achete maintenant
+                   Découvrir
                   </button>
               </div>
             </div>
             {/* promo 2 */}
             <div
               className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'
-              style={{ backgroundImage: `url(${PromoImg2})`, color: '#000000' }} // apply background image and text color styles
+              style={{ backgroundImage: `url(${PromoImg2})`, color: '#000000',backgroundSize: 'cover' }} // apply background image and text color styles
             >
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
@@ -47,7 +47,7 @@ const Hero = () => {
                   
                 </div>
                 <button className='btn btn-accent mx-auto lg:mx-0'>
-                    Achete maintenant
+                  Découvrir
                   </button>
               </div>
             </div>
