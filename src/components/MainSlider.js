@@ -15,7 +15,7 @@ const sliderData = [
     pretitle: '',
     titlePart1: '',
     titlePart2: '',
-    titlePart3: '',
+    titlePart3: 'Quand tu manques de mots!!!',
     btnText: 'Achete maintenant',
   },
   {
@@ -23,7 +23,7 @@ const sliderData = [
     pretitle: '',
     titlePart1: '',
     titlePart2: '',
-    titlePart3: '',
+    titlePart3: 'Mettre un sourire sur son visage',
     btnText: 'Achete maintenant',
   },
   {
@@ -31,7 +31,7 @@ const sliderData = [
     pretitle: '',
     titlePart1: '',
     titlePart2: '',
-    titlePart3: '',
+    titlePart3: 'Amour livré',
     btnText: '',
   },
 ];
