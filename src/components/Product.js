@@ -2,6 +2,8 @@ import React from 'react';
 // link
 import { Link } from 'react-router-dom';
 
+const hostApi = process.env.REACT_APP_API_HOST
+
 const Product = ({ product }) => {
   // console.log(product);
   return (
@@ -19,7 +21,7 @@ const Product = ({ product }) => {
         <div className='w-full h-[200px] flex items-center justify-center relative'>
           <img
             className='w-[160px] h-[160px] group-hover:scale-90 transition-all'
-            src={`http://localhost:1337${product?.attributes.image.data?.attributes.url}`}
+            src={`${hostApi}${product?.attributes.image.data?.attributes.url}`.replace('api/',"")}
             alt=''
           />
         </div>

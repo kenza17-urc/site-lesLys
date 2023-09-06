@@ -9,12 +9,11 @@ import CartItem from '../components/CartItem';
 import { loadStripe } from '@stripe/stripe-js';
 import { request } from '../request';
 
-const Cart = () => {
-  const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
+const stripePromise = loadStripe('pk_live_51Ljir7IKsjbCfwtZocb2FvoWZKg4do8FSN3nQmR4bxnuaEt02bvKHk05pOaYytOEcIacMuJFHaxfLz1WpWqrw0nQ00OeSbl7vS');
 
-  const stripePromise = loadStripe(
-    'pk_test_51Ljir7IKsjbCfwtZWT0APA0aQPj9TZd3VmpO52EQr4cQCn3Ja2sl4iMgOTneVUK4PCQvZGE3In1AizvWqYLDbzzn00N9bCIXWj'
-  );
+const Cart = () => {
+  
+  const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
 
   const handlePayment = async () => {
     try {
@@ -23,8 +22,13 @@ const Cart = () => {
         cart,
       });
 
+      // ---
       await stripe.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
+      }).then(function (result) {
+        if (result.error) {
+          // Handle error here
+        }
       });
     } 
     catch (error) {

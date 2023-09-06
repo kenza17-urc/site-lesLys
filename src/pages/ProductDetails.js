@@ -8,6 +8,9 @@ import RelatedProducts from '../components/RelatedProducts';
 // context
 import { CartContext } from '../context/CartContext';
 
+const hostApi = process.env.REACT_APP_API_HOST
+
+
 const ProductDetails = () => {
   const { addToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -26,7 +29,7 @@ const ProductDetails = () => {
         <div className='flex flex-col lg:flex-row gap-[30px] mb-[30px]'>
           <div className='flex-1 lg:max-w-[40%] lg:h-[540px] grad rounded-lg flex justify-center items-center'>
             <img
-              src={`http://localhost:1337${data[0]?.attributes.image.data?.attributes.url}`}
+              src={`${hostApi}${data[0]?.attributes.image.data?.attributes.url}`.replace('api/','')}
               alt=''
               className='w-full max-w-[65%]'
             />
