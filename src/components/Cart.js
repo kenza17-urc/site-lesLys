@@ -5,15 +5,16 @@ import { IoArrowForward, IoCartOutline, IoClose } from 'react-icons/io5';
 import { CartContext } from '../context/CartContext';
 // components
 import CartItem from '../components/CartItem';
-// stripe
 import { loadStripe } from '@stripe/stripe-js';
 import { request } from '../request';
 
 const stripePromise = loadStripe('pk_live_51Ljir7IKsjbCfwtZocb2FvoWZKg4do8FSN3nQmR4bxnuaEt02bvKHk05pOaYytOEcIacMuJFHaxfLz1WpWqrw0nQ00OeSbl7vS');
 
 const Cart = () => {
-  
+
+
   const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
+
 
   const handlePayment = async () => {
     try {
@@ -22,7 +23,9 @@ const Cart = () => {
         cart,
       });
 
+
       // ---
+
       await stripe.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
       }).then(function (result) {
@@ -30,6 +33,7 @@ const Cart = () => {
           // Handle error here
         }
       });
+      
     } 
     catch (error) {
       console.log(error);
@@ -88,7 +92,7 @@ const Cart = () => {
           </div>
         ) : (
           <div className='h-full absolute top-0 right-0 left-0 flex justify-center items-center -z-10 flex-col text-white/30'>
-            <div className='text-2xl'>Votre panier est vide</div>
+            <div className='text-2xl'> Votre panier est vide </div>
             <div className='text-6xl'>
               <IoCartOutline />
             </div>

@@ -16,6 +16,11 @@ const ProductDetails = () => {
   const { id } = useParams();
   // get product data base on the id
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
+
+const hostApi = process.env.REACT_APP_API_HOST
+
+console.log(' HOST API ', hostApi);
+
   if (!data) {
     return <div className='container mx-auto'>loading...</div>;
   }

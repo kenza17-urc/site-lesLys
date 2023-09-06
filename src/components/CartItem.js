@@ -12,7 +12,9 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
 
 const CartItem = ({ item }) => {
+
   const { removeFromCart } = useContext(CartContext);
+
   return (
     <div className='flex gap-x-8'>
       <Link to={`product/${item.id}`} className='w-[70px] h-[70px]'>
