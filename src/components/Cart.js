@@ -50,7 +50,7 @@ const Cart = () => {
         >
           <IoClose />
         </div>
-        <div className="flex flex-col gap-y-10 px-2">
+        {/* <div className="flex flex-col gap-y-10 px-2">
           {cart.map((item) => {
             return (
               <div key={item.id}>
@@ -69,7 +69,7 @@ const Cart = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
       {/* subtotal & total */}
       {cart.length >= 1 && (
