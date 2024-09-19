@@ -72,7 +72,7 @@ const MainSlider = () => {
                     {slide.titlePart3}
                   </div>
                   {/* <button className='btn btn-accent mx-auto lg:mx-0'>
-                    Achete maintenant
+                    Achete maintenan
                   </button> */}
                 </div>
               </div>
