@@ -44,7 +44,7 @@ const CartItem = ({ item }) => {
         {/* price */}
         <div>
           <span className='text-accent'>
-           {item?.attributes.price} €  par pièce
+           {item?.attributes.price} €  par pièces
           </span>
         </div>
       </div>
