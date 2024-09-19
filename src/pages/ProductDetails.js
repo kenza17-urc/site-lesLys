@@ -53,7 +53,7 @@ const ProductDetails = () => {
                 onClick={() => addToCart(data, id)}
                 className='btn btn-accent'
               >
-                Ajouter au panie
+                Ajouter au panier
               </button>
             </div>
           </div>
