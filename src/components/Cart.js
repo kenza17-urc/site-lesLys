@@ -81,7 +81,7 @@ const Cart = () => {
           </div>
           {/* total */}
           <div className="flex justify-between text-2xl">
-            <div>Totale</div>
+            <div>Total</div>
             <div>{total}€ </div>
           </div>
         </div>
