@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 // icons
 import { IoArrowForward, IoCartOutline, IoClose } from "react-icons/io5";
 // context
@@ -15,17 +15,14 @@ const stripePromise = loadStripe(
 
 const Cart = () => {
   const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
-  const [cardMessages, setCardMessages] = useState({});
 
   const handlePayment = async () => {
     try {
       const stripe = await stripePromise;
       const res = await request.post("/orders", {
-        cart,
-        cardMessages,
+        cart,  // On envoie le panier
       });
 
-      // ---
       await stripe
         .redirectToCheckout({
           sessionId: res.data.stripeSession.id,
@@ -50,26 +47,16 @@ const Cart = () => {
         >
           <IoClose />
         </div>
-        {/* <div className="flex flex-col gap-y-10 px-2">
+        {/* Displaying cart items */}
+        <div className="flex flex-col gap-y-10 px-2">
           {cart.map((item) => {
             return (
               <div key={item.id}>
                 <CartItem item={item} />
-                <textarea
-                  className="w-full p-2 mt-4 border rounded-md"
-                  placeholder={`Message pour ${item.name}...`}
-                  value={cardMessages[item.id] || ""}
-                  onChange={(e) =>
-                    setCardMessages((prev) => ({
-                      ...prev,
-                      [item.id]: e.target.value,
-                    }))
-                  }
-                ></textarea>
               </div>
             );
           })}
-        </div> */}
+        </div>
       </div>
       {/* subtotal & total */}
       {cart.length >= 1 && (

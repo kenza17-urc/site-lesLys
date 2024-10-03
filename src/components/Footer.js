@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaYoutube, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
-
+import NewsletterForm from './NewsletterForm';
 const Footer = () => {
   return (
     <footer className='pt-16 bg-primary'>
@@ -15,24 +15,17 @@ const Footer = () => {
           </p>
         </div>
         {/* form */}
-        <form className='w-full max-w-3xl mx-auto flex flex-col md:flex-row gap-5 my-14'>
-          <input
-            type='text'
-            placeholder='Your email address'
-            className='input'
-          />
-          <button className='btn btn-accent min-w-[150px]'>Joindre</button>
-        </form>
+        <NewsletterForm />
         {/* links */}
         <div className='text-base text-white/60 flex gap-x-6 capitalize max-w-max mx-auto mb-9'>
-          <a href='#' className='hover:text-white transition-all'>
-          Politique de retour
+        <a href='/mentions-legales' className='hover:text-white transition-all'>
+          Mentions légales
           </a>
-          <a href='#' className='hover:text-white transition-all'>
-          Suivez votre commande
+          <a href='/CGV' className='hover:text-white transition-all'>
+          CGV
           </a>
-          <a href='#' className='hover:text-white transition-all'>
-          Expédition & livraison
+          <a href='/PrivacyPolicy' className='hover:text-white transition-all'>
+          politique de confidentialité
           </a>
         </div>
         {/* socials */}
@@ -55,7 +48,7 @@ const Footer = () => {
       <div className='py-10 border-t border-t-white/10'>
         <div className='container mx-auto'>
           <div className='text-center text-sm text-white/60'>
-            Copyright &copy; KENZA KACETE 2023. All rights reserved.
+            Copyright &copy; KENZA KACETE 2024. All rights reserved.
           </div>
         </div>
       </div>

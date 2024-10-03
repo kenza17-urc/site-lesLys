@@ -15,10 +15,9 @@ const Products = () => {
     if (data && data.length > 0) {
       setTitle(data[0]?.attributes.categories.data[0]?.attributes.title);
     }
-  }, [data]); // Update dependencies array to include data
+  }, [data]); // Met à jour la dépendance pour inclure les données
 
   if (error) {
-    // Handle error, e.g. show error message
     return <div>Error: {error.message}</div>;
   }
 
@@ -28,9 +27,10 @@ const Products = () => {
         <div className='flex gap-x-[30px]'>
           <CategoryNav />
           <main>
-            <div className='py-3 text-xl uppercase text-center lg:text-left'>
-              {title}
-            </div>
+            {/* SEO-friendly title */}
+            <h1 className='py-3 text-xl uppercase text-center lg:text-left'>
+              {title ? title : 'Produits'}
+            </h1>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[15px] md:gap-[30px]'>
               {data?.map((product) => (
                 <Product product={product} key={product.id} />
@@ -44,4 +44,3 @@ const Products = () => {
 };
 
 export default Products;
-

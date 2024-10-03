@@ -1,0 +1,22 @@
+# Bloquer l'accès aux pages spécifiques
+User-agent: *
+Disallow: /CGV
+Disallow: /MentionsLegales
+Disallow: /PrivacyPolicy
+
+# Autoriser l'accès aux pages publiques
+Allow: /Home
+Allow: /ProductDetails
+Allow: /Products
+Allow: /Search
+
+# Ne pas bloquer tous les robots sur ces chemins
+User-agent: Googlebot
+Allow: /Home
+Allow: /ProductDetails
+
+User-agent: Bingbot
+Allow: /Home
+Allow: /ProductDetails
+
+
